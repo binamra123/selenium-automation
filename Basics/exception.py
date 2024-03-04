@@ -22,6 +22,8 @@ else:
     print(reciprocal)
 
 
+
+#try except with if else
 try:
     num_str = input("Please enter a number: ")
 
@@ -41,4 +43,35 @@ except Exception as e:
 
 finally:
     print("Finally is always executed")
-    
+
+
+#Multiple Excepts
+try:
+    y = int(input("Enter numerator: "))
+    z = int(input("Enter denominator: "))
+    result = y / z
+
+except ValueError:
+    print("Invalid input! Please enter valid integers.")
+
+except ZeroDivisionError:
+    print("Division by zero is not allowed!")
+
+else:
+    print("Result:", result)
+
+
+#Nested Try-Excepts
+try:
+    try:
+        num = int(input("Enter a number: "))
+        reciprocal = 1 / num
+
+    except ValueError:
+        print("Invalid input! Please enter a valid number.")
+
+    except ZeroDivisionError:
+        print("Cannot divide by zero!")
+
+except Exception as e:
+    print("Exception occurred:", e)
